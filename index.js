@@ -20,8 +20,8 @@ app.get('/birds', async (req, res, next) => {
 
 app.post('/birds', async (req, res, next) => {
   try {
-    const {name, breed, color, description} = req.body;
-    const bird = await Bird.create({name, breed, color, description});
+    const {name, latin, identification, conservation, where_to_see} = req.body;
+    const bird = await Bird.create({name, latin, identification, conservation, where_to_see});
     res.send(bird);
   } catch (error) {
     next(error);
